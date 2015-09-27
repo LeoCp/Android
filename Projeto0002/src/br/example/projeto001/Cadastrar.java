@@ -2,6 +2,7 @@ package br.example.projeto001;
 
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -15,7 +16,8 @@ public class Cadastrar extends Activity implements OnClickListener{
 	
 	EditText inpuNome,inpuIdade,inpuCpf;
 	Button butCadastrar,butVoltar;
-	
+	Pessoa[] pessoa = new Pessoa[100];
+	int x = RepositorioPessoa.listaPessoa.size()+1;
 	
 	@Override
 	protected void onCreate (Bundle savedInstanceState) {
@@ -27,6 +29,7 @@ public class Cadastrar extends Activity implements OnClickListener{
 		inpuIdade =  (EditText) findViewById(R.id.editTIdade);
 		inpuCpf =  (EditText) findViewById(R.id.editTCpf);
 		butCadastrar = (Button) findViewById(R.id.butCadastrar);
+		butCadastrar.setOnClickListener(this);
 		butVoltar = (Button) findViewById(R.id.butVoltar);
 		
 	}
@@ -39,6 +42,20 @@ public class Cadastrar extends Activity implements OnClickListener{
 		
 		case R.id.butCadastrar :
 			
+			pessoa[x] = new Pessoa();
+			pessoa[x].setNome(String.valueOf(inpuNome.getText().toString()));
+			pessoa[x].setIdade(Integer.valueOf(inpuIdade.getText().toString()));
+			pessoa[x].setCpf(Integer.valueOf(inpuCpf.getText().toString()));
+			RepositorioPessoa.listaPessoa.add(pessoa[x]);
+			
+			AlertDialog.Builder y = new AlertDialog.Builder(this);
+			y.setMessage(String.valueOf(inpuNome.getText().toString()) + " voce foi cadastrado!");
+			y.setNeutralButton("Ok", null);
+			y.show();
+			
+			inpuNome.setText("");
+			inpuIdade.setText("");
+			inpuCpf.setText("");
 			
 		break;
 		
