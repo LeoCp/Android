@@ -3,6 +3,7 @@ package br.example.projeto001;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -31,6 +32,7 @@ public class Cadastrar extends Activity implements OnClickListener{
 		butCadastrar = (Button) findViewById(R.id.butCadastrar);
 		butCadastrar.setOnClickListener(this);
 		butVoltar = (Button) findViewById(R.id.butVoltar);
+		butVoltar.setOnClickListener(this);
 		
 	}
 
@@ -53,13 +55,17 @@ public class Cadastrar extends Activity implements OnClickListener{
 			y.setNeutralButton("Ok", null);
 			y.show();
 			
-			inpuNome.setText("");
 			inpuIdade.setText("");
 			inpuCpf.setText("");
-			
-		break;
+			inpuNome.setText("");			
+		
+			break;
 		
 		case R.id.butVoltar :
+			
+			Intent intent = new Intent(this, Principal.class);
+        	startActivity(intent);
+           
 			
 		break;
 			
