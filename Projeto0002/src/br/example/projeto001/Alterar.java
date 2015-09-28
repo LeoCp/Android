@@ -1,6 +1,4 @@
 package br.example.projeto001;
-
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
@@ -50,7 +48,7 @@ public class Alterar extends Activity implements OnClickListener{
 			spinner.setAdapter(adapter);
 			
 			
-			/*more code*/
+			
 			spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
 				@Override
@@ -85,7 +83,7 @@ public class Alterar extends Activity implements OnClickListener{
 			RepositorioPessoa.listaPessoa.get(spinner.getSelectedItemPosition()).setCpf(Integer.valueOf(edCpf.getText().toString()));
 			
 			AlertDialog.Builder y = new AlertDialog.Builder(this);
-			y.setMessage("Alterações feitas com sucesso!");
+			y.setMessage("AlteraÃ§Ãµes feitas com sucesso!");
 			y.setNeutralButton("Ok", null);
 			y.show();
 			
