@@ -1,5 +1,4 @@
 package br.example.projeto001;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,18 +16,16 @@ public class Principal extends Activity implements OnClickListener {
 		setContentView(R.layout.principal);
 		
 		butCadastrar = (Button) findViewById(R.id.butCadastrarTela);
-        butCadastrar.setOnClickListener(this);
+		butCadastrar.setOnClickListener(this);
 
-        butCadastros = (Button) findViewById(R.id.butCadastros);
-        butCadastros.setOnClickListener(this);
+        	butCadastros = (Button) findViewById(R.id.butCadastros);
+		butCadastros.setOnClickListener(this);
 
-        butAlterar = (Button) findViewById(R.id.butAlterar);
-        butAlterar.setOnClickListener(this);
+		butAlterar = (Button) findViewById(R.id.butAlterar);
+		butAlterar.setOnClickListener(this);
         
-        butDelet = (Button) findViewById(R.id.butDeleteTela);
-        butDelet.setOnClickListener(this);
-        
-
+        	butDelet = (Button) findViewById(R.id.butDeleteTela);
+        	butDelet.setOnClickListener(this);
         
 	}
 	
@@ -37,39 +34,36 @@ public class Principal extends Activity implements OnClickListener {
 		
 		switch (v.getId()) {
 
-        case R.id.butCadastrarTela:
+        	case R.id.butCadastrarTela:
         	
-        	Intent intent = new Intent(this, Cadastrar.class);
-        	startActivity(intent);
-            break;
+        		Intent intent = new Intent(this, Cadastrar.class);
+        		startActivity(intent);
+            	break;
 
-        case R.id.butAlterar:
+        	case R.id.butAlterar:
         	
-        	Intent i = new Intent(this,Alterar.class);
-        	startActivity(i);
+        		Intent i = new Intent(this,Alterar.class);
+        		startActivity(i);
         	break;
 
-        case R.id.butCadastros:
+        	case R.id.butCadastros:
         	
-        	Intent inte = new Intent(this, Cadastros.class);
-            startActivity(inte);
-            break;
+        		Intent inte = new Intent(this, Cadastros.class);
+            		startActivity(inte);
+            	break;
             
-        case R.id.butDeleteTela:
+        	case R.id.butDeleteTela:
         	
-        	Intent x = new Intent(this, Deletar.class);
-            startActivity(x);
+        		Intent x = new Intent(this, Deletar.class);
+            		startActivity(x);
             
-            break;
+            	break;
         
-        default:
-			break;
+        	default:
+		break;
 
-        }
+        	}
 		
-
-		
-	
 	}
 
 }
