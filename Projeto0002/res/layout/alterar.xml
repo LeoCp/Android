@@ -59,10 +59,29 @@
         android:layout_height="wrap_content"
         android:ems="10" />
 
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Alterar" />
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/butAlterar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Alterar" />
+
+            <Button
+                android:id="@+id/butVoltarAlterar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Voltar" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </LinearLayout>
