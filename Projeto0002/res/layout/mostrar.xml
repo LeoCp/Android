@@ -8,8 +8,20 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cadastros"
+        android:text="Cadastrados"
         android:layout_gravity="center_horizontal"
         android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <ListView
+        android:id="@+id/llView"
+        android:layout_width="match_parent"
+        android:layout_height="298dp" >
+    </ListView>
+
+    <Button
+        android:id="@+id/butVoltarMostra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Voltar" />
 
 </LinearLayout>

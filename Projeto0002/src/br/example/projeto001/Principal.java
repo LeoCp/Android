@@ -39,15 +39,15 @@ public class Principal extends Activity implements OnClickListener {
         	startActivity(intent);
             break;
 
-        case R.id.butCadastros:
+        case R.id.butAlterar:
         	
-        	Intent i = new Intent(this,Cadastros.class);
+        	Intent i = new Intent(this,Alterar.class);
         	startActivity(i);
         	break;
 
-        case R.id.butAlterar:
+        case R.id.butCadastros:
         	
-        	Intent inte = new Intent(this, Alterar.class);
+        	Intent inte = new Intent(this, Cadastros.class);
             startActivity(inte);
             break;
         
