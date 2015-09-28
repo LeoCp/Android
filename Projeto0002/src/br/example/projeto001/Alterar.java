@@ -22,10 +22,9 @@ public class Alterar extends Activity implements OnClickListener{
 		
 		@Override
 		protected void onCreate(Bundle savedInstanceState) {
-			// TODO Auto-generated method stub
+			
 			super.onCreate(savedInstanceState);
 			setContentView(R.layout.alterar);
-			
 			
 			spinner = (Spinner) findViewById(R.id.spinnerAlterar);
 			edNome = (EditText) findViewById(R.id.iptNome);
@@ -45,6 +44,7 @@ public class Alterar extends Activity implements OnClickListener{
 				itens[i] = RepositorioPessoa.listaPessoa.get(i).getNome();
 				
 			}
+			
 			ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, itens);
 			adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 			spinner.setAdapter(adapter);
@@ -72,9 +72,6 @@ public class Alterar extends Activity implements OnClickListener{
 		
 			});
 			
-		
-		
-		
 		}
 
 		@Override
@@ -92,6 +89,8 @@ public class Alterar extends Activity implements OnClickListener{
 			y.setNeutralButton("Ok", null);
 			y.show();
 			
+			Intent ite = new Intent(this, Alterar.class);
+			startActivity(ite);
 			
 			break;
 			

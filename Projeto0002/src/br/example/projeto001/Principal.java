@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class Principal extends Activity implements OnClickListener {
 	
-	Button butCadastrar,butCadastros,butAlterar;
+	Button butCadastrar,butCadastros,butAlterar,butDelet;
 		
 	protected void onCreate (Bundle savedInstanceState) {
 
@@ -24,6 +24,10 @@ public class Principal extends Activity implements OnClickListener {
 
         butAlterar = (Button) findViewById(R.id.butAlterar);
         butAlterar.setOnClickListener(this);
+        
+        butDelet = (Button) findViewById(R.id.butDeleteTela);
+        butDelet.setOnClickListener(this);
+        
 
         
 	}
@@ -49,6 +53,13 @@ public class Principal extends Activity implements OnClickListener {
         	
         	Intent inte = new Intent(this, Cadastros.class);
             startActivity(inte);
+            break;
+            
+        case R.id.butDeleteTela:
+        	
+        	Intent x = new Intent(this, Deletar.class);
+            startActivity(x);
+            
             break;
         
         default:
