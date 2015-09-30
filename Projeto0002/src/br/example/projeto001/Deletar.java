@@ -1,5 +1,4 @@
 package br.example.projeto001;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
