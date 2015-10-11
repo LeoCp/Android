@@ -7,14 +7,17 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioGroup;
 import br.example.projeto001.Cadastrar;
 import br.example.projeto001.R;
 
 
 public class Cadastrar extends Activity implements OnClickListener{
 	
+	String s;
 	EditText inpuNome,inpuIdade,inpuCpf;
 	Button butCadastrar,butVoltar;
+	RadioGroup rGMasFen;
 	Pessoa[] pessoa = new Pessoa[100];
 	int x = RepositorioPessoa.listaPessoa.size()+1;
 	
@@ -23,7 +26,7 @@ public class Cadastrar extends Activity implements OnClickListener{
 		
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.laycadastrar);
-	
+		rGMasFen = (RadioGroup) findViewById(R.id.rG_MeF);
 		inpuNome =  (EditText) findViewById(R.id.editTNome);
 		inpuIdade =  (EditText) findViewById(R.id.editTIdade);
 		inpuCpf =  (EditText) findViewById(R.id.editTCpf);
@@ -48,14 +51,22 @@ public class Cadastrar extends Activity implements OnClickListener{
 			pessoa[x].setCpf(Integer.valueOf(inpuCpf.getText().toString()));
 			RepositorioPessoa.listaPessoa.add(pessoa[x]);
 			
+			if(rGMasFen.getCheckedRadioButtonId() == R.id.rMasculino){
+				s = "cadastrado!";
+			}else{
+				s = "cadastrada!";
+			}
+			
 			AlertDialog.Builder y = new AlertDialog.Builder(this);
-			y.setMessage(String.valueOf(inpuNome.getText().toString()) + " voce foi cadastrado!");
+			y.setMessage(String.valueOf(inpuNome.getText().toString()) + " você foi " + s);
 			y.setNeutralButton("Ok", null);
 			y.show();
 			
+			
 			inpuIdade.setText("");
 			inpuCpf.setText("");
-			inpuNome.setText("");			
+			inpuNome.setText("");
+			rGMasFen.clearCheck();
 		
 			break;
 		

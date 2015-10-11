@@ -8,10 +8,9 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cadastar Pessoa"
-        android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_gravity="center_horizontal"
-        />
+        android:text="Cadastar Pessoa"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
         android:id="@+id/textView2"
@@ -33,7 +32,6 @@
 
             <requestFocus />
         </EditText>
-
     </LinearLayout>
 
     <TextView
@@ -62,14 +60,33 @@
         android:layout_height="wrap_content"
         android:ems="10" />
 
+    <RadioGroup
+        android:id="@+id/rG_MeF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <RadioButton
+            android:id="@+id/rMasculino"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Masculino" 
+            />
+
+        <RadioButton
+            android:id="@+id/rFenino"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Feminino" />
+
+    </RadioGroup>
+
     <Button
         android:id="@+id/butCadastrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cadastar"
         android:layout_gravity="center_horizontal"
         android:onClick="cadastraP"
-        />
+        android:text="Cadastar" />
 
     <Button
         android:id="@+id/butVoltar"
