@@ -58,7 +58,7 @@ public class ContatoDao {
 		cursor.moveToFirst();
 		
 		while(!cursor.isAfterLast()){
-			Contato c =  new Contato();
+		
 			c.setId(cursor.getInt(0));
 			c.setNome(cursor.getString(1));
 			c.setTelefone(cursor.getString(2));
