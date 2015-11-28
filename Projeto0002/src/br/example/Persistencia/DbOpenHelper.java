@@ -6,8 +6,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DbOpenHelper extends SQLiteOpenHelper {
 	
-	private static final String BANCO = "bdProj";
-	private static final int VERSION = 1;
+	private static final String BANCO = "bdProj"; // Nome do banco
+	private static final int VERSION = 1; // Versão do banco
 	
 	public DbOpenHelper(Context context) {
 		super(context,BANCO,null, VERSION);
@@ -15,12 +15,13 @@ public class DbOpenHelper extends SQLiteOpenHelper {
 	
 	@Override
 	public void onCreate(SQLiteDatabase db) {
-		 
+		db.execSQL("create table pessoa(id integer primary key autoincrement nome text,idade text,cpf text);");
 	}
 
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-		 
+		 db.execSQL("drop table if exists pessoa");
+		 onCreate(db);
 	}
 	
 }
