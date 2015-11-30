@@ -83,7 +83,7 @@ public class Alterar extends Activity implements OnClickListener{
 			RepositorioPessoa.listaPessoa.get(spinner.getSelectedItemPosition()).setCpf(Integer.valueOf(edCpf.getText().toString()));
 			
 			AlertDialog.Builder y = new AlertDialog.Builder(this);
-			y.setMessage("Alterações feitas com sucesso!");
+			y.setMessage("AlteraÃ§Ãµes feitas com sucesso!");
 			y.setNeutralButton("Ok", null);
 			y.show();
 			
