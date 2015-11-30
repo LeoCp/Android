@@ -58,14 +58,16 @@ public class ContatoDao {
 		cursor.moveToFirst();
 		
 		while(!cursor.isAfterLast()){
-		
-			c.setId(cursor.getInt(0));
-			c.setNome(cursor.getString(1));
-			c.setTelefone(cursor.getString(2));
-			c.setEmail(cursor.getString(3));
-			list.add(c);
+			Contato contato = new Contato();
+			contato.setId(cursor.getInt(0));
+			contato.setNome(cursor.getString(1));
+			contato.setTelefone(cursor.getString(2));
+			contato.setEmail(cursor.getString(3));
+			list.add(contato);
+			cursor.moveToNext();
 		
 		}
+		cursor.close();
 		return list;
 		
 	}
